@@ -1,0 +1,346 @@
+
+
+.job-first-row {
+  display: flex;
+  align-items: center; 
+}
+
+.job-second-row {
+  display: flex;
+  align-items: center;
+  z-index: 1
+}
+
+.frontcolors, .backcolors {
+  display: flex;
+  flex: 5;
+
+  justify-content: center;  
+}
+.backcolors {
+  margin-right: 30px
+}
+button.colors {
+  font-size:1.5rem;
+  outline: none;
+  border: none;
+  width: 1rem;
+  display: table-cell;
+  vertical-align: middle;
+  cursor:pointer;
+  color:#ffffff;
+  text-decoration:none;
+  text-shadow:0px 0px 0px #2f6627;
+}
+button.colors:hover {
+  transform: scale(1.1);
+}
+#c, #m, #y, #k, #p {
+  flex:1;
+}
+.colors-wrapped {
+  outline: none;
+  perspective: 120rem;
+  perspective-origin: 50% 50% 0;
+  width: 2.5rem;
+  height: 2rem;
+  margin: 0 auto;
+
+}
+.colors-wrapped.disabled {
+  pointer-events:none;
+}
+.color-box {
+  outline: none;
+  position: relative;
+  width: 2.5rem;
+  height: 2rem;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 0;
+  transform: rotateX(0deg);
+  transition: 0.4s linear all; /*speed of turning boxes*/
+}
+.color-box.active {
+  transform: rotateX(90deg) translateZ(1rem); 
+}
+.colorbutton {
+  background: #cccccc;
+  text-transform: uppercase;
+  font-size:1.5rem;
+  outline: none;
+  border: none;
+  width: 2.5rem;
+  height: 2rem;
+  cursor:pointer;
+  border-bottom: 2px solid rgba(255,255,255,0);
+  color:#ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s linear color; /*speed of fadeout when reset or fadein when pages is set*/
+}
+.colorbutton.disabled {
+  color: #cccccc;
+}
+.colorbutton, .coloredbox {
+  text-align: center;
+  position: relative;
+  outline: none;
+  /*box-sizing: border-box;*/
+  width: 2.5rem;
+  height: 2rem;
+  transform-origin: top center;
+  cursor: pointer;
+}
+.coloredbox {
+  height: 33.5px;
+}
+#c .coloredbox {
+  /*background: #50d9ff;*/
+  background: #87e0fd;
+  background: -moz-linear-gradient(top, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+  background: -webkit-linear-gradient(top, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+  background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+  transform: rotateX(270deg);
+}
+#m .coloredbox {
+  /*background: rgba(255, 0, 255, 1);*/
+  background: #ff5db1;
+  background: -webkit-linear-gradient(#ff5db1 0%, #ef017c 100%);
+  background: -o-linear-gradient(#ff5db1 0%, #ef017c 100%);
+  background: linear-gradient(#ff5db1 0%, #ef017c 100%);
+  transform: rotateX(270deg);
+}
+#y .coloredbox {
+  /*background: rgba(255, 255, 0 , 1);*/
+  background: -moz-linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(255,247,105,1) 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,247,105,1)), color-stop(100%, rgba(255,255,0,1))); /* safari4+,chrome */
+background: -o-linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(255,247,105,1) 100%); /* opera 11.10+ */
+background: linear-gradient(0deg, rgba(255,255,0,1) 0%, rgba(255,247,105,1) 100%); /* w3c */
+  transform: rotateX(270deg);
+}
+#k .coloredbox {
+  /*background: rgba(0, 0, 0, 0.7);*/
+  background: #666666;
+background: -moz-linear-gradient(top, #666666 0%, #131313 100%);
+background: -webkit-linear-gradient(top, #666666 0%,#131313 100%);
+background: linear-gradient(to bottom, #666666 0%,#131313 100%);
+  transform: rotateX(270deg);
+}
+#p .coloredbox {
+  /*background: rgba(218, 165, 32, 1);*/
+    /*background-color: rgba(151, 87, 91, 1);*/
+    /*background-image: -webkit-gradient(linear, 0% 0%, 100% 100%,color-stop(0, rgb(0, 165, 223)),color-stop(0.2, rgb(62, 20, 123)),color-stop(0.4, rgb(226, 0, 121)),color-stop(0.6, rgb(223, 19, 44)),color-stop(0.8, rgb(243, 239, 21)),color-stop(1, rgb(0, 152, 71)));*/
+  
+background: -moz-linear-gradient(top, rgba(234,185,45,1) 0%, rgba(199,152,16,1) 100%);
+background: -webkit-linear-gradient(top, rgba(234,185,45,1) 0%,rgba(199,152,16,1) 100%);
+background: linear-gradient(to bottom, rgba(234,185,45,1) 0%,rgba(199,152,16,1) 100%);
+
+  transform: rotateX(270deg);
+}
+#c .colorbutton:hover {
+  border-bottom: 2px solid #50d9ff
+}
+#m .colorbutton:hover {
+  border-bottom: 2px solid rgba(255, 0, 255, 1)
+}
+#y .colorbutton:hover {
+  border-bottom: 2px solid rgba(255, 255, 0 , 1)
+}
+#k .colorbutton:hover {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+#p .colorbutton:hover {
+  border-bottom: 2px solid rgba(218, 165, 32, 1);
+}
+.fpf, .fpz {
+  margin: 25px;
+  outline: none;
+  border: 3px purple solid;
+  background: none;
+  color: purple;
+  display: block;
+  font-family: 'trebuchet ms';
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  padding: 0.5rem;
+  position: relative;
+  transition: all 0.3s ease; /*transition speed of button when pages is >0, active*/
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fpf:before, .fpz:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.3s ease; /*transition speed of layers when pages is >0, active*/
+    transform: translate(-10px, 10px);
+    background: rgba(0, 255, 255, 0.7);
+    box-shadow: rgba(255, 255, 0, 0.7) -5px 5px 0 0, rgba(255, 0, 255, 0.7) -10px 10px 0 0,  rgba(9,9,9,0.7) -15px 15px 0 0;
+  }
+
+  .fpf:hover:before, .fpf:focus:before, 
+  .fpz:hover:before, .fpz:focus:before{
+    box-shadow: none;
+    transform: translate(0, 0);
+  }
+  .fpf:hover, .fpz:hover,
+  .fpf:focus, .fpz:focus {
+    background: purple;
+    color: white
+  }
+
+  .activeColorSelectionButton {
+    margin: 25px;
+    outline: none;
+    border: 3px purple solid;
+    background: purple;
+    color: white;
+    display: block;
+    font-family: 'trebuchet ms';
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    padding: 0.5rem;
+    position: relative;
+    transition: all 0.5s ease; /*transition speed of button when pages is >0, active*/
+    text-decoration: none;
+  }
+  
+  .fpf:disabled, .fpz:disabled {
+    margin: 25px;
+  outline: none;
+  border: 3px grey solid;
+  background: grey;
+  color: grey;
+  display: block;
+  font-family: 'trebuchet ms';
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  padding: 0.5rem;
+  cursor: default;
+  position: relative;
+  transition: all 0.5s ease; /* transition speed of button when pages is 0*/
+  text-decoration: none;
+  }
+  .fpf:disabled:before,.fpz:disabled:before{
+    box-shadow: none;
+    background: none;
+  transition: all 0.5s ease; /* transition speed of layers when pages is 0*/
+  }
+
+.reset-button {
+  background-color: #c0392b;
+  width: 60px;
+  height: 25px;
+  line-height: 25px;
+  /*margin: auto;*/
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  align-self: flex-start;
+  outline: none;
+  border-radius: 3px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.reset-button span,
+.reset-button .icon {
+  display: block;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+}
+
+.reset-button span { /*RESET text*/
+  width: 65%;
+  line-height: inherit;
+  font-size: 10px;
+  left: 0;
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+.reset-button span:after { /*vertical line after RESET*/
+  content: '';
+  background-color: #a53125;
+  width: 2px;
+  height: 60%;
+  position: absolute;
+  top: 15%;
+  right: -1px;
+}
+.reset-button .icon {
+  width: 38%;
+  right: 0;
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.reset-button .icon .fa { /*icon font size*/
+  font-size: 16px;
+  vertical-align: middle;
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
+}
+.reset-button .icon .fa-remove {
+  height: 20px;
+}
+.reset-button .icon .fa-check {
+  display: none;
+}
+.reset-button.success span, .reset-button:hover span {
+  left: -72%;
+  opacity: 0;
+}
+.reset-button.success .icon, .reset-button:hover .icon {
+  width: 100%;
+}
+.reset-button.success .icon .fa, .reset-button:hover .icon .fa {
+  font-size: 20px;
+}
+.reset-button.success {
+  background-color: #27ae60;
+}
+.reset-button.success .icon .fa-remove {
+  display: none;
+}
+.reset-button.success .icon .fa-check {
+  display: inline-block;
+}
+.reset-button:hover {
+  opacity: .9;
+}
+.reset-button:hover .icon .fa-remove {
+  height: 24px;
+}
+.sizeButtons {
+  justify-items: center;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "chap chap"
+    "asizes bsizes"
+}
+.chap {
+  grid-area: chap;
+}
+.sizeItems {
+  background: none;
+  border: none;
+  font-size: 4rem;
+  outline: none;
+  font-weight: 600;
+}
+
+.asizes {
+  grid-area: asizes;
+  color: orange;
+}
+.bsizes {
+  grid-area: bsizes;
+  color: rgba(134, 163, 40,0.7);
+}
